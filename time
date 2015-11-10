@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <time.h>
+void tampilan()
+int main()
+{
+  time_t SEKARANG, MULAI, SELESAI;
+	time_t DETIK;
+  struct tm *info;// stuktur data waktu detik,menit
+  char buffer[80];//jumlah karakter yg akan ditampilkan
+  char HARI[10];//nama hari yang akan ditampilkan
+  time( &DETIK );
+  info = localtime( &DETIK );
+  strftime(buffer,80,"%A, %d, %B, %Y - %H:%M:%S", info);
+  printf("hari ini adalah:| %s |\n", buffer );
+  strftime(HARI,10,"%A", info);
+  if (strcmp(HARI,"Sunday")==0) {
+                printf("\n Sekarang hari MINGGU \n");
+   }
+   else if (strcmp(HARI,"Monday")==0) {
+                printf("\n Sekarang hari SENIN \n");
+   }
+    else if (strcmp(HARI,"Tuesday")==0 ){
+                printf("\n Sekarang hari SELASA \n");
+   }
+    else if (strcmp(HARI,"Wednesday")==0 ){
+                printf("\n Sekarang hari RABU \n");
+   }
+    else if (strcmp(HARI,"Thursday")==0 ){
+                printf("\n Sekarang hari KAMIS \n");
+   }
+    else if (strcmp(HARI,"friday")==0 ){
+                printf("\n Sekarang hari JUM'AT \n");
+   }
+    else if (strcmp(HARI,"Saturday")==0 ){
+                printf("\n Sekarang hari SABTU \n");
+   }
+   printf("Sekarang adalah hari & tanggal : | %s |\n", buffer);
+   }
+}
+    int main()
+{
+    time_t awal=0, akhir=0;
+    time(&awal);
+    while(1)
+    {
+        time(&akhir);
+        if(akhir - awal > 0 )
+        {
+            tampilan();
+            awal = akhir;
+        }
+    }
+    return 0;
+}
