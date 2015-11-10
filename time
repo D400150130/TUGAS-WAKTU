@@ -4,7 +4,7 @@ void tampilan()
 int main()
 {
   time_t SEKARANG, MULAI, SELESAI;
-	time_t DETIK;
+  time_t DETIK;
   struct tm *info;// stuktur data waktu detik,menit
   char buffer[80];//jumlah karakter yg akan ditampilkan
   char HARI[10];//nama hari yang akan ditampilkan
